@@ -19,5 +19,8 @@
   "homepage": "https://github.com/guilhermebkel/Fake-Airbnb#readme",
   "devDependencies": {
     "@types/node": "^12.7.11"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
