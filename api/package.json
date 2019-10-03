@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/guilhermebkel/Fake-Airbnb/issues"
   },
-  "homepage": "https://github.com/guilhermebkel/Fake-Airbnb#readme"
+  "homepage": "https://github.com/guilhermebkel/Fake-Airbnb#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.11"
+  }
 }
