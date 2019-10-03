@@ -1,0 +1,20 @@
+{
+  "name": "fake-airbnb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilhermebkel/Fake-Airbnb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guilhermebkel/Fake-Airbnb/issues"
+  },
+  "homepage": "https://github.com/guilhermebkel/Fake-Airbnb#readme"
+}

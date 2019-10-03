@@ -8,5 +8,8 @@
     "watch": [
         "src"
     ],
-    "ext": "js ts"
+    "ext": "js ts",
+    "execMap": {
+        "ts": "ts-node"
+    }
 }
