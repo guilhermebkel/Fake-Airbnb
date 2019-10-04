@@ -1,6 +1,6 @@
 import * as express from 'express'
 import { Express } from 'express'
-import routes from '../controllers'
+import routes from '../../controllers'
 
 export default class Server {
   _app: Express
