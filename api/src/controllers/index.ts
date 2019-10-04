@@ -1,4 +1,5 @@
 import { Express, Request, Response } from 'express'
+import User from '../models/User'
 
 export default {
   config(app: Express){
@@ -8,7 +9,16 @@ export default {
 
 async function createUser(req: Request, res: Response){
   try{
-    return res.json(req.body)
+    const { email } = req.body
+    if (!email) return res.json({ success: false, error: 'Not sent email' })
+
+    let user = await User.findOne({ email })
+
+    if(!user){
+      user = await User.create({ email })
+    }
+
+    return res.json({ success: true, data: user })
   }
   catch(error){
     console.error(error)

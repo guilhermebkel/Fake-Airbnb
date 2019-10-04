@@ -7,6 +7,6 @@ export default class Database {
 
   async connectDatabase(){
     await mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true })
-    console.log(`Connected to MongoDB... [${mongoose.connection.host}]`)
+    console.log(`Connected to MongoDB...`)
   }
 }
