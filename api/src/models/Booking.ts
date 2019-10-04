@@ -3,7 +3,6 @@ import * as mongoose from 'mongoose'
 const Booking = new mongoose.Schema({
   date: String,
   approved: Boolean,
-  price: Number,
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
