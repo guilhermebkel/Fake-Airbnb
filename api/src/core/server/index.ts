@@ -1,4 +1,5 @@
 import * as express from 'express'
+import * as cors from 'cors'
 import { Express } from 'express'
 import routes from '../../controllers'
 
@@ -21,6 +22,7 @@ export default class Server {
 
   setupMiddlewares(){
     this._app.use(express.json())
+    this._app.use(cors())
   }
 
   setupRoutes(){
