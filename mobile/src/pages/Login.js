@@ -1,41 +1,87 @@
-import React from 'react'
-import { KeyboardAvoidingView, View, Image, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
+import React, { Component } from 'react'
+import { 
+    KeyboardAvoidingView, 
+    View, 
+    Image, 
+    StyleSheet, 
+    Text, 
+    TextInput, 
+    TouchableOpacity,
+    AsyncStorage,
+    Alert
+} from 'react-native'
+
+import Api from '../services/Api'
 
 import Logo from '../assets/logo.png'
 
-export default function Login(){
-    return (
-        <KeyboardAvoidingView 
-            behavior="padding"
-            style={styles.container}
-        >
-            <Image source={Logo} />
-            <View style={styles.form}>
-                <Text style={styles.label}>E-MAIL *</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholder="Your email..."
-                    placeholderTextColor="#999"
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                />
+export default class Login extends Component {
+    state= {
+        email: '',
+        techs: ''
+    }
 
-                <Text style={styles.label}>TECHNOLOGIES *</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholder="Technologies you're interested in..."
-                    placeholderTextColor="#999"
-                    autoCapitalize="words"
-                    autoCorrect={false}
-                />
+    componentDidMount(){
+        AsyncStorage.getItem('user').then(user => {
+            if (user) this.props.navigation.navigate('List')
+        })
+    }
 
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Find spots</Text>
-                </TouchableOpacity>
-            </View>
-        </KeyboardAvoidingView>
-    )
+    handleSubmit = async () => {
+        const { data: { success, error, data }} = await Api.post('/sessions', {
+            email: this.state.email
+        })
+
+        if (error) return Alert.alert('Error when attempting to login!')
+
+        const { _id } = data
+        await AsyncStorage.setItem('user', _id)
+        await AsyncStorage.setItem('techs', this.state.techs)
+
+        this.props.navigation.navigate('List')
+    }
+
+    render(){
+        return (
+            <KeyboardAvoidingView 
+                behavior="padding"
+                style={styles.container}
+            >
+                <Image source={Logo} />
+                <View style={styles.form}>
+                    <Text style={styles.label}>E-MAIL *</Text>
+                    <TextInput 
+                        style={styles.input}
+                        placeholder="Your email..."
+                        placeholderTextColor="#999"
+                        keyboardType="email-address"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        value={this.state.email}
+                        onChangeText={email => this.setState({ email })}
+                    />
+    
+                    <Text style={styles.label}>TECHNOLOGIES *</Text>
+                    <TextInput 
+                        style={styles.input}
+                        placeholder="Technologies you're interested in..."
+                        placeholderTextColor="#999"
+                        autoCapitalize="words"
+                        autoCorrect={false}
+                        value={this.state.techs}
+                        onChangeText={techs => this.setState({ techs })}
+                    />
+    
+                    <TouchableOpacity 
+                        style={styles.button}
+                        onPress={this.handleSubmit}
+                    >
+                        <Text style={styles.buttonText}>Find spots</Text>
+                    </TouchableOpacity>
+                </View>
+            </KeyboardAvoidingView>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
