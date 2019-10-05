@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2364732088bd7a1886789ddcdbb976e4",
+    "revision": "56c6b3065ee0286cd4f2865d45caa36e",
     "url": "/Fake-Airbnb/index.html"
   },
   {
-    "revision": "c6b449f406ff46e59bbd",
+    "revision": "5fa12165920cccb1846c",
     "url": "/Fake-Airbnb/static/css/main.f20d831a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Fake-Airbnb/static/js/2.ce47b4cb.chunk.js"
   },
   {
-    "revision": "c6b449f406ff46e59bbd",
-    "url": "/Fake-Airbnb/static/js/main.76aa18e4.chunk.js"
+    "revision": "5fa12165920cccb1846c",
+    "url": "/Fake-Airbnb/static/js/main.0b62a973.chunk.js"
   },
   {
     "revision": "a5119f35550f3e64d7b9",
