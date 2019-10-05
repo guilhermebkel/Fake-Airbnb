@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 import Api from '../../services/Api'
 
 import './styles.css'
@@ -25,17 +27,22 @@ export default class Dashboard extends Component {
 
     render(){
         return(
-            <ul className="spot-list">
-                {
-                    this.state.spots.map(spot => (
-                        <li key={spot._id}>
-                            <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }} />
-                            <strong>{spot.company}</strong>
-                            <span>{spot.price ? `R$${spot.price}/dia` : 'FREE'}</span>
-                        </li>
-                    ))
-                }
-            </ul>
+            <>
+                <ul className="spot-list">
+                    {
+                        this.state.spots.map(spot => (
+                            <li key={spot._id}>
+                                <img src={spot.thumbnail_url} alt="" />
+                                <strong>{spot.company}</strong>
+                                <span>{spot.price ? `R$${spot.price}/dia` : 'FREE'}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <Link to="/new">
+                    <button className="btn">Create new spot</button>
+                </Link>
+            </>
         )
     }
 }
