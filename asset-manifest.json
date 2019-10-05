@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Fake-Airbnb/static/css/main.f20d831a.chunk.css",
+    "main.js": "/Fake-Airbnb/static/js/main.ad943e41.chunk.js",
+    "main.js.map": "/Fake-Airbnb/static/js/main.ad943e41.chunk.js.map",
+    "runtime-main.js": "/Fake-Airbnb/static/js/runtime-main.9ed54be0.js",
+    "runtime-main.js.map": "/Fake-Airbnb/static/js/runtime-main.9ed54be0.js.map",
+    "static/js/2.ce47b4cb.chunk.js": "/Fake-Airbnb/static/js/2.ce47b4cb.chunk.js",
+    "static/js/2.ce47b4cb.chunk.js.map": "/Fake-Airbnb/static/js/2.ce47b4cb.chunk.js.map",
+    "index.html": "/Fake-Airbnb/index.html",
+    "precache-manifest.76f64105d8c7e6c5b3e4add41db0c71b.js": "/Fake-Airbnb/precache-manifest.76f64105d8c7e6c5b3e4add41db0c71b.js",
+    "service-worker.js": "/Fake-Airbnb/service-worker.js",
+    "static/css/main.f20d831a.chunk.css.map": "/Fake-Airbnb/static/css/main.f20d831a.chunk.css.map",
+    "static/media/App.css": "/Fake-Airbnb/static/media/background.83252e0a.jpg",
+    "static/media/camera.svg": "/Fake-Airbnb/static/media/camera.6a6f4b6e.svg",
+    "static/media/logo.svg": "/Fake-Airbnb/static/media/logo.74052802.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ed54be0.js",
+    "static/js/2.ce47b4cb.chunk.js",
+    "static/css/main.f20d831a.chunk.css",
+    "static/js/main.ad943e41.chunk.js"
+  ]
+}
