@@ -10,7 +10,10 @@ export default class Login extends Component {
         event.preventDefault()
         const { data: { success, error, data }} = await Api.post('/sessions', { email: this.state.email })
         
-        if (success) return localStorage.setItem('user', data._id)
+        if (success) {
+            localStorage.setItem('user', data._id)
+            return this.props.history.push('/dashboard')
+        }
     
         return alert(error)
     }
