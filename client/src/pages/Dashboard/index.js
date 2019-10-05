@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Api from '../../services/Api'
 
+import './styles.css'
+
 export default class Dashboard extends Component {
     state = {
         spots: []
@@ -15,7 +17,7 @@ export default class Dashboard extends Component {
         const { data: { success, error, data }} = await Api.get('/dashboard', { 
             headers: { user_id }
         })
-        console.log(data)
+
         if (success) return this.setState({ spots: data })
 
         return alert(error)
@@ -27,9 +29,9 @@ export default class Dashboard extends Component {
                 {
                     this.state.spots.map(spot => (
                         <li key={spot._id}>
-                            <header />
+                            <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }} />
                             <strong>{spot.company}</strong>
-                            <span>{spot.price}</span>
+                            <span>{spot.price ? `R$${spot.price}/dia` : 'FREE'}</span>
                         </li>
                     ))
                 }
