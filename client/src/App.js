@@ -13,8 +13,9 @@ class App extends Component {
   
   async handleSubmit(event){
     event.preventDefault()
-
-    const response = await Api.post('/sessions', { email: this.state.email })
+    const { data: _id } = await Api.post('/sessions', { email: this.state.email })
+    
+    localStorage.setItem('user', _id)
   }
 
   render(){
