@@ -11,7 +11,7 @@ const upload = multer(Upload)
 
 export default {
   config(app: Express){
-    app.post('/users', createUser)
+    app.post('/sessions', createUser)
     app.post('/spots', upload.single('thumbnail'), createSpot)
     app.get('/spots', getSpots)
     app.get('/dashboard', getUserSpots)
